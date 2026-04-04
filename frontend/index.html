@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PIM V — Sistema web para gerenciamento de eventos acadêmicos inclusivos em TI. Programação, inscrições e certificados."
+    />
+    <title>PIM V — Eventos acadêmicos inclusivos em TI</title>
+    <link rel="shortcut icon" href="assets/unip-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <!-- data-page: chave lida por main.js para inicializar comportamentos específicos -->
+  <body data-page="home">
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+    <div class="layout">
+      <header class="topo" role="banner">
+        <div class="topo__inner">
+          <a class="marca" href="index.html">
+            <span class="marca__icone" aria-hidden="true"
+              ><img src="assets/unip-logo.png" alt="logo-unip"
+            /></span>
+            PIM V — Eventos inclusivos em TI
+          </a>
+          <span
+            class="badge-libras"
+            title="Conteúdo com suporte a Libras em desenvolvimento acadêmico"
+          >
+            <span aria-hidden="true">🤟</span> Conteúdo pensado para Libras
+          </span>
+          <nav class="nav-principal" aria-label="Navegação principal">
+            <a href="index.html" aria-current="page">Início</a>
+            <a href="pages/programacao.html">Programação</a>
+            <a href="pages/inscricao.html">Inscrição</a>
+            <a href="pages/participante.html">Participante</a>
+            <a href="pages/certificados.html">Certificados</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="conteudo-principal" tabindex="-1">
+        <!-- Hero: apresentação do evento e chamadas principais -->
+        <section class="hero" aria-labelledby="titulo-principal">
+          <div>
+            <h1 id="titulo-principal">Eventos acadêmicos inclusivos em TI</h1>
+            <p class="lead">
+              Plataforma do projeto PIM V para divulgar programação, realizar
+              inscrições acessíveis e acompanhar certificados, integrada ao
+              back-end em C# via API REST.
+            </p>
+            <div
+              class="barra-a11y"
+              role="toolbar"
+              aria-label="Opções de acessibilidade visual"
+            >
+              <span>Acessibilidade:</span>
+              <button
+                type="button"
+                class="btn btn--icone"
+                id="a11y-contraste"
+                aria-pressed="false"
+              >
+                Alto contraste
+              </button>
+              <button
+                type="button"
+                class="btn btn--icone"
+                id="a11y-texto"
+                aria-pressed="false"
+              >
+                Texto maior
+              </button>
+            </div>
+            <div class="grid-botoes">
+              <a class="btn btn--primario" href="pages/programacao.html"
+                >Ver programação</a
+              >
+              <a class="btn btn--secundario" href="pages/inscricao.html"
+                >Inscrever-se</a
+              >
+            </div>
+            <div
+              id="status-api-home"
+              class="alerta alerta--info mt-1"
+              hidden
+            ></div>
+          </div>
+          <figure class="hero__arte">
+            <!-- Ilustração vetorial: inclusão digital (decoração com texto alternativo descritivo) -->
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 280' role='img'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233d9cf0'/%3E%3Cstop offset='1' stop-color='%23c084fc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='%231a2332' width='400' height='280' rx='16'/%3E%3Ccircle cx='200' cy='120' r='70' fill='url(%23g)' opacity='0.35'/%3E%3Cpath fill='%23f0f4f8' d='M120 180h160v8H120zm20-100h120v60H140zm30 20h60v8h-60zm0 16h40v8h-40z' opacity='0.9'/%3E%3Ctext x='200' y='245' text-anchor='middle' fill='%23b8c5d6' font-family='sans-serif' font-size='14'%3EAcessibilidade · TI · Comunidade%3C/text%3E%3C/svg%3E"
+              width="400"
+              height="280"
+              alt="Ilustração abstrata representando inclusão digital, pessoas e tecnologia em tons azul e lilás."
+            />
+            <figcaption class="sr-only">
+              Arte conceitual do PIM V: tecnologia acessível e participação
+              acadêmica.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Destaques em cartões responsivos (grid no CSS) -->
+        <section class="cartao" aria-labelledby="titulo-destaques">
+          <h2 id="titulo-destaques">Destaques</h2>
+          <div class="grid-destaques">
+            <article>
+              <h3>Inclusão real</h3>
+              <p>
+                Estrutura pensada para contraste, navegação por teclado e apoio
+                a conteúdo em Libras (vídeos simulados com descrição).
+              </p>
+            </article>
+            <article>
+              <h3>Dados reais da API</h3>
+              <p>
+                Programação e inscrições vêm do mesmo núcleo C# usado na
+                disciplina, sem mocks obrigatórios quando a API está no ar.
+              </p>
+            </article>
+            <article>
+              <h3>Responsivo</h3>
+              <p>
+                Layout mobile-first com Flexbox e CSS Grid; teste em celular,
+                tablet e desktop antes da banca.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Seção Libras: vídeos simulados (placeholder visual + descrição textual) -->
+        <section class="secao-libras cartao" aria-labelledby="titulo-libras">
+          <h2 id="titulo-libras">
+            Libras — vídeos orientativos (simulação acadêmica)
+          </h2>
+          <p class="lead">
+            Em um ambiente de produção, estes seriam vídeos gravados com
+            intérprete de Libras. Aqui há
+            <strong>placeholders visuais</strong> com descrição do roteiro para
+            avaliação do requisito.
+          </p>
+          <div class="grid-videos">
+            <article class="video-card">
+              <div
+                class="video-placeholder"
+                role="img"
+                aria-labelledby="v-apresenta-label"
+                aria-describedby="v-apresenta-desc"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M8 5v14l11-7L8 5zm1.5 2.4L15 12l-5.5 4.6V7.4zM4 7h2v10H4V7zm14 0h2v10h-2V7z"
+                  />
+                </svg>
+              </div>
+              <div class="video-card__corpo">
+                <h3 id="v-apresenta-label">Vídeo: apresentação do evento</h3>
+                <p id="v-apresenta-desc">
+                  <strong>Roteiro (simulado):</strong> intérprete apresenta o
+                  nome do evento, datas, público-alvo e canais de apoio
+                  acessível. Duração sugerida: 2 minutos.
+                </p>
+              </div>
+            </article>
+            <article class="video-card">
+              <div
+                class="video-placeholder"
+                role="img"
+                aria-labelledby="v-insc-label"
+                aria-describedby="v-insc-desc"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M8 5v14l11-7L8 5zm1.5 2.4L15 12l-5.5 4.6V7.4zM4 7h2v10H4V7zm14 0h2v10h-2V7z"
+                  />
+                </svg>
+              </div>
+              <div class="video-card__corpo">
+                <h3 id="v-insc-label">Vídeo: como se inscrever</h3>
+                <p id="v-insc-desc">
+                  <strong>Roteiro (simulado):</strong> passo a passo em Libras,
+                  abrir página Inscrição, preencher nome e e-mail, escolher
+                  evento e confirmar. Menciona validação de dados.
+                </p>
+              </div>
+            </article>
+            <article class="video-card">
+              <div
+                class="video-placeholder"
+                role="img"
+                aria-labelledby="v-nav-label"
+                aria-describedby="v-nav-desc"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M8 5v14l11-7L8 5zm1.5 2.4L15 12l-5.5 4.6V7.4zM4 7h2v10H4V7zm14 0h2v10h-2V7z"
+                  />
+                </svg>
+              </div>
+              <div class="video-card__corpo">
+                <h3 id="v-nav-label">Vídeo: navegação no site</h3>
+                <p id="v-nav-desc">
+                  <strong>Roteiro (simulado):</strong> demonstração das seções
+                  Programação, Participante e Certificados; destaque para link
+                  "pular para o conteúdo" e botões de acessibilidade.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Glossário de termos do domínio -->
+        <section class="cartao glossario" aria-labelledby="titulo-glossario">
+          <h2 id="titulo-glossario">Glossário</h2>
+          <dl>
+            <dt>Inscrição</dt>
+            <dd>
+              Registro de um participante em um evento acadêmico, vinculando
+              pessoa e evento no sistema.
+            </dd>
+            <dt>Certificado</dt>
+            <dd>
+              Documento comprobatório de participação, gerado a partir de uma
+              inscrição confirmada.
+            </dd>
+            <dt>Palestra</dt>
+            <dd>
+              Atividade de exposição de conteúdo, geralmente com um ou mais
+              palestrantes e público amplo.
+            </dd>
+            <dt>Minicurso</dt>
+            <dd>
+              Atividade prática com duração concentrada, focada em aprendizagem
+              de uma habilidade específica.
+            </dd>
+            <dt>Cancelamento</dt>
+            <dd>
+              Alteração de estado da inscrição que remove a participação ativa,
+              conforme regras de negócio do back-end.
+            </dd>
+          </dl>
+        </section>
+      </main>
+
+      <footer class="rodape" role="contentinfo">
+        <p>
+          PIM V — Projeto acadêmico. Front-end estático + API em C# (dotnet run
+          na pasta backend).
+        </p>
+      </footer>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Inscrição em eventos acadêmicos — PIM V."
+    />
+    <title>Inscrição — PIM V</title>
+    <link
+      rel="shortcut icon"
+      href="../assets/unip-logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body data-page="inscricao">
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+    <div class="layout">
+      <header class="topo" role="banner">
+        <div class="topo__inner">
+          <a class="marca" href="../index.html">
+            <span class="marca__icone" aria-hidden="true"
+              ><img src="../assets/unip-logo.png" alt="logo-unip"
+            /></span>
+            PIM V
+          </a>
+          <span class="badge-libras"
+            ><span aria-hidden="true">🤟</span> Libras</span
+          >
+          <nav class="nav-principal" aria-label="Navegação principal">
+            <a href="../index.html">Início</a>
+            <a href="programacao.html">Programação</a>
+            <a href="inscricao.html" aria-current="page">Inscrição</a>
+            <a href="participante.html">Participante</a>
+            <a href="certificados.html">Certificados</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="conteudo-principal" tabindex="-1">
+        <h1>Inscrição</h1>
+        <p class="lead">
+          Preencha os dados. O front-end valida formato; o servidor aplica
+          regras de negócio (e-mail único, evento com inscrições abertas, etc.).
+        </p>
+
+        <div
+          class="barra-a11y"
+          role="toolbar"
+          aria-label="Opções de acessibilidade visual"
+        >
+          <span>Acessibilidade:</span>
+          <button
+            type="button"
+            class="btn btn--icone"
+            id="a11y-contraste"
+            aria-pressed="false"
+          >
+            Alto contraste
+          </button>
+          <button
+            type="button"
+            class="btn btn--icone"
+            id="a11y-texto"
+            aria-pressed="false"
+          >
+            Texto maior
+          </button>
+        </div>
+
+        <form id="form-inscricao" class="formulario cartao mt-1" novalidate>
+          <!-- novalidate: usamos validação customizada em JS para mensagens em português -->
+          <div class="rotulo">
+            <label for="insc-nome">Nome completo</label>
+            <input
+              type="text"
+              id="insc-nome"
+              name="nome"
+              required
+              minlength="3"
+              autocomplete="name"
+              aria-describedby="help-nome"
+            />
+            <p id="help-nome" class="item-atividade__meta">
+              Mínimo de 3 caracteres.
+            </p>
+          </div>
+          <div class="rotulo">
+            <label for="insc-email">E-mail</label>
+            <input
+              type="email"
+              id="insc-email"
+              name="email"
+              required
+              autocomplete="email"
+              aria-describedby="help-email"
+            />
+            <p id="help-email" class="item-atividade__meta">
+              Será usado para consultar inscrições e certificados.
+            </p>
+          </div>
+          <div class="rotulo">
+            <label for="insc-instituicao">Instituição (opcional)</label>
+            <input
+              type="text"
+              id="insc-instituicao"
+              name="instituicao"
+              autocomplete="organization"
+            />
+          </div>
+          <div class="rotulo">
+            <label for="select-evento">Evento</label>
+            <select id="select-evento" name="eventoId" required>
+              <option value="">Carregando eventos…</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--primario">
+            Enviar inscrição
+          </button>
+        </form>
+
+        <div id="status-inscricao" class="alerta mt-1" hidden></div>
+      </main>
+
+      <footer class="rodape" role="contentinfo">
+        <p>
+          PIM V — Integração <code>POST /api/participantes</code> e
+          <code>POST /api/inscricoes</code>.
+        </p>
+      </footer>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

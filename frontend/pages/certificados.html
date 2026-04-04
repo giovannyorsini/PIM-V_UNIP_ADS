@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Certificados de participação — PIM V." />
+    <title>Certificados — PIM V</title>
+    <link
+      rel="shortcut icon"
+      href="../assets/unip-logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body data-page="certificados">
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+    <div class="layout">
+      <header class="topo" role="banner">
+        <div class="topo__inner">
+          <a class="marca" href="../index.html">
+            <span class="marca__icone" aria-hidden="true"
+              ><img src="../assets/unip-logo.png" alt="logo-unip"
+            /></span>
+            PIM V
+          </a>
+          <span class="badge-libras"
+            ><span aria-hidden="true">🤟</span> Libras</span
+          >
+          <nav class="nav-principal" aria-label="Navegação principal">
+            <a href="../index.html">Início</a>
+            <a href="programacao.html">Programação</a>
+            <a href="inscricao.html">Inscrição</a>
+            <a href="participante.html">Participante</a>
+            <a href="certificados.html" aria-current="page">Certificados</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="conteudo-principal" tabindex="-1">
+        <h1>Certificados</h1>
+        <p class="lead">
+          Liste certificados por e-mail e abra a visualização simulada do texto
+          emitido pelo back-end. Use a emissão quando já houver inscrição
+          confirmada.
+        </p>
+
+        <div
+          class="barra-a11y"
+          role="toolbar"
+          aria-label="Opções de acessibilidade visual"
+        >
+          <span>Acessibilidade:</span>
+          <button
+            type="button"
+            class="btn btn--icone"
+            id="a11y-contraste"
+            aria-pressed="false"
+          >
+            Alto contraste
+          </button>
+          <button
+            type="button"
+            class="btn btn--icone"
+            id="a11y-texto"
+            aria-pressed="false"
+          >
+            Texto maior
+          </button>
+        </div>
+
+        <section class="cartao mt-1" aria-labelledby="titulo-lista-cert">
+          <h2 id="titulo-lista-cert">Meus certificados</h2>
+          <form id="form-cert-email" class="formulario">
+            <div class="rotulo">
+              <label for="cert-email">E-mail do participante</label>
+              <input
+                type="email"
+                id="cert-email"
+                required
+                autocomplete="email"
+              />
+            </div>
+            <button type="submit" class="btn btn--primario">
+              Carregar lista
+            </button>
+          </form>
+          <div id="status-cert" class="alerta mt-1" hidden></div>
+          <div class="tabela-wrap mt-1">
+            <table class="tabela-dados" aria-describedby="titulo-lista-cert">
+              <thead>
+                <tr>
+                  <th scope="col">Evento</th>
+                  <th scope="col">Emissão</th>
+                  <th scope="col">Prévia</th>
+                  <th scope="col">Ação</th>
+                </tr>
+              </thead>
+              <tbody id="corpo-tabela-cert"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cartao mt-1" aria-labelledby="titulo-emitir">
+          <h2 id="titulo-emitir">Emitir certificado (simulação)</h2>
+          <p class="item-atividade__meta">
+            Requer inscrição confirmada no evento selecionado. Chama
+            <code>POST /api/certificados/emitir</code>.
+          </p>
+          <form id="form-emitir-cert" class="formulario">
+            <div class="rotulo">
+              <label for="emitir-email">E-mail</label>
+              <input
+                type="email"
+                id="emitir-email"
+                required
+                autocomplete="email"
+              />
+            </div>
+            <div class="rotulo">
+              <label for="emitir-evento">Evento da inscrição</label>
+              <select id="emitir-evento" required>
+                <option value="">Carregando…</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--secundario">
+              Solicitar emissão
+            </button>
+          </form>
+        </section>
+      </main>
+
+      <footer class="rodape" role="contentinfo">
+        <p>PIM V — Certificados via API; texto gerado pelo serviço C#.</p>
+      </footer>
+    </div>
+
+    <!-- Modal: visualização do conteúdo textual do certificado -->
+    <div
+      id="modal-cert"
+      class="modal-fundo"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-cert-titulo"
+      hidden
+    >
+      <div class="modal">
+        <h2 id="modal-cert-titulo" class="mt-1">Certificado</h2>
+        <pre id="modal-cert-texto"></pre>
+        <button type="button" class="btn btn--primario" id="modal-cert-fechar">
+          Fechar
+        </button>
+      </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Consulta de participante e inscrições — PIM V."
+    />
+    <title>Participante — PIM V</title>
+    <link
+      rel="shortcut icon"
+      href="../assets/unip-logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body data-page="participante">
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+    <div class="layout">
+      <header class="topo" role="banner">
+        <div class="topo__inner">
+          <a class="marca" href="../index.html">
+            <span class="marca__icone" aria-hidden="true"
+              ><img src="../assets/unip-logo.png" alt="logo-unip"
+            /></span>
+            PIM V
+          </a>
+          <span class="badge-libras"
+            ><span aria-hidden="true">🤟</span> Libras</span
+          >
+          <nav class="nav-principal" aria-label="Navegação principal">
+            <a href="../index.html">Início</a>
+            <a href="programacao.html">Programação</a>
+            <a href="inscricao.html">Inscrição</a>
+            <a href="participante.html" aria-current="page">Participante</a>
+            <a href="certificados.html">Certificados</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="conteudo-principal" tabindex="-1">
+        <h1>Área do participante</h1>
+        <p class="lead">
+          Informe o e-mail cadastrado para exibir seus dados e a lista de
+          inscrições retornada pela API.
+        </p>
+
+        <div
+          class="barra-a11y"
+          role="toolbar"
+          aria-label="Opções de acessibilidade visual"
+        >
+          <span>Acessibilidade:</span>
+          <button
+            type="button"
+            class="btn btn--icone"
+            id="a11y-contraste"
+            aria-pressed="false"
+          >
+            Alto contraste
+          </button>
+          <button
+            type="button"
+            class="btn btn--icone"
+            id="a11y-texto"
+            aria-pressed="false"
+          >
+            Texto maior
+          </button>
+        </div>
+
+        <form id="form-participante" class="formulario cartao mt-1">
+          <div class="rotulo">
+            <label for="part-email">E-mail</label>
+            <input
+              type="email"
+              id="part-email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </div>
+          <button type="submit" class="btn btn--primario">Buscar</button>
+        </form>
+
+        <div id="status-participante" class="alerta mt-1" hidden></div>
+
+        <!-- Painel preenchido dinamicamente (dados + inscrições) -->
+        <div id="painel-participante" class="mt-1" hidden></div>
+      </main>
+
+      <footer class="rodape" role="contentinfo">
+        <p>
+          PIM V — <code>GET /api/participantes/por-email</code> e
+          <code>GET /api/inscricoes</code>.
+        </p>
+      </footer>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

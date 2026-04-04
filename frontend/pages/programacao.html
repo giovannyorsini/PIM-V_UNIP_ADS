@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Programação de atividades do PIM V — dados da API."
+    />
+    <title>Programação — PIM V</title>
+    <link
+      rel="shortcut icon"
+      href="../assets/unip-logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body data-page="programacao">
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+    <div class="layout">
+      <header class="topo" role="banner">
+        <div class="topo__inner">
+          <a class="marca" href="../index.html">
+            <span class="marca__icone" aria-hidden="true"
+              ><img src="../assets/unip-logo.png" alt="logo-unip"
+            /></span>
+            PIM V
+          </a>
+          <span class="badge-libras"
+            ><span aria-hidden="true">🤟</span> Libras</span
+          >
+          <nav class="nav-principal" aria-label="Navegação principal">
+            <a href="../index.html">Início</a>
+            <a href="programacao.html" aria-current="page">Programação</a>
+            <a href="inscricao.html">Inscrição</a>
+            <a href="participante.html">Participante</a>
+            <a href="certificados.html">Certificados</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="conteudo-principal" tabindex="-1">
+        <h1>Programação</h1>
+        <p class="lead">
+          Atividades carregadas do back-end (<code>GET /api/atividades</code>):
+          título, horário e descrição.
+        </p>
+
+        <div
+          class="barra-a11y"
+          role="toolbar"
+          aria-label="Opções de acessibilidade visual"
+        >
+          <span>Acessibilidade:</span>
+          <button
+            type="button"
+            class="btn btn--icone"
+            id="a11y-contraste"
+            aria-pressed="false"
+          >
+            Alto contraste
+          </button>
+          <button
+            type="button"
+            class="btn btn--icone"
+            id="a11y-texto"
+            aria-pressed="false"
+          >
+            Texto maior
+          </button>
+        </div>
+
+        <div id="status-programacao" class="alerta mt-1" hidden></div>
+
+        <!-- Skeleton: feedback visual enquanto a API responde (simulação de carregamento) -->
+        <div
+          id="skeleton-programacao"
+          class="skeleton mt-1"
+          aria-hidden="true"
+        ></div>
+
+        <!-- Lista preenchida por main.js após fetch -->
+        <ol
+          id="lista-atividades"
+          class="lista-atividades mt-1"
+          aria-live="polite"
+        ></ol>
+      </main>
+
+      <footer class="rodape" role="contentinfo">
+        <p>PIM V — Programação via API REST.</p>
+      </footer>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

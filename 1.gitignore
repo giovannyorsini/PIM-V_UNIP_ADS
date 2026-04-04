@@ -1,0 +1,65 @@
+# --- .NET 8 / C# (ASP.NET Core) ---
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.user
+*.userosscache
+*.suo
+*.rsuser
+*.cache
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# NuGet (restore regenerates under obj/, but ignore if copied elsewhere)
+packages/
+
+# Test output
+[Tt]est[Rr]esult*/
+*.trx
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# ReSharper / dotCover
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Visual Studio
+.vs/
+
+# --- Runtime / local data (written beside the API executable) ---
+dados_pimv_api.json
+dados_pimv.json
+CertificadosEmitidos/
+
+# --- Front-end (static; ready if you add Node/build tools) ---
+node_modules/
+dist/
+build/
+.npm
+.eslintcache
+*.local
+
+# --- Environment & secrets ---
+.env
+.env.*
+!.env.example
+*.pfx
+*.key
+appsettings.*.local.json
+secrets.json
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- Editor ---
+*.swp
+*.swo
+*~
