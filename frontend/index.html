@@ -132,80 +132,73 @@
 
         <!-- Seção Libras: vídeos simulados (placeholder visual + descrição textual) -->
         <section class="secao-libras cartao" aria-labelledby="titulo-libras">
-          <h2 id="titulo-libras">
-            Libras — vídeos orientativos (simulação acadêmica)
-          </h2>
+          <h2 id="titulo-libras">Libras — vídeos orientativos</h2>
           <p class="lead">
             Em um ambiente de produção, estes seriam vídeos gravados com
             intérprete de Libras. Aqui há
-            <strong>placeholders visuais</strong> com descrição do roteiro para
-            avaliação do requisito.
+            <strong>animações visuais</strong> contendo roteiros individuais
+            para avaliação do requisito. 
+            <br /><strong>Vídeo 1: APRESENTAÇÃO DO EVENTO</strong>
+            <br /><strong>Vídeo 2: COMO FAZER INSCRIÇÃO</strong> 
+            <br /><strong>Vídeo 3: COMO USAR A PLATAFORMA</strong>
           </p>
           <div class="grid-videos">
             <article class="video-card">
               <div
                 class="video-placeholder"
-                role="img"
                 aria-labelledby="v-apresenta-label"
                 aria-describedby="v-apresenta-desc"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path
-                    d="M8 5v14l11-7L8 5zm1.5 2.4L15 12l-5.5 4.6V7.4zM4 7h2v10H4V7zm14 0h2v10h-2V7z"
-                  />
-                </svg>
-              </div>
-              <div class="video-card__corpo">
-                <h3 id="v-apresenta-label">Vídeo: apresentação do evento</h3>
-                <p id="v-apresenta-desc">
-                  <strong>Roteiro (simulado):</strong> intérprete apresenta o
-                  nome do evento, datas, público-alvo e canais de apoio
-                  acessível. Duração sugerida: 2 minutos.
-                </p>
+                <video controls>
+                  <!-- Formatos modernos e eficientes (navegadores novos) -->
+                  <source src="assets/libras1.webm" type="video/webm" />
+
+                  <!-- Formato compatível com a maioria (navegadores antigos/Safari) -->
+                  <source src="assets/libras1.mp4" type="video/mp4" />
+
+                  <!-- Texto para navegadores que não suportam a tag vídeo -->
+                  Seu navegador não suporta este formato de vídeo.
+                  <a href="assets/libras1.mp4">Baixe o vídeo</a>.
+                </video>
               </div>
             </article>
             <article class="video-card">
               <div
                 class="video-placeholder"
-                role="img"
                 aria-labelledby="v-insc-label"
                 aria-describedby="v-insc-desc"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path
-                    d="M8 5v14l11-7L8 5zm1.5 2.4L15 12l-5.5 4.6V7.4zM4 7h2v10H4V7zm14 0h2v10h-2V7z"
-                  />
-                </svg>
-              </div>
-              <div class="video-card__corpo">
-                <h3 id="v-insc-label">Vídeo: como se inscrever</h3>
-                <p id="v-insc-desc">
-                  <strong>Roteiro (simulado):</strong> passo a passo em Libras,
-                  abrir página Inscrição, preencher nome e e-mail, escolher
-                  evento e confirmar. Menciona validação de dados.
-                </p>
+                <video controls>
+                  <!-- Formatos modernos e eficientes (navegadores novos) -->
+                  <source src="assets/libras2.webm" type="video/webm" />
+
+                  <!-- Formato compatível com a maioria (navegadores antigos/Safari) -->
+                  <source src="assets/libras2.mp4" type="video/mp4" />
+
+                  <!-- Texto para navegadores que não suportam a tag vídeo -->
+                  Seu navegador não suporta este formato de vídeo.
+                  <a href="assets/libras2.mp4">Baixe o vídeo</a>.
+                </video>
               </div>
             </article>
+
             <article class="video-card">
               <div
                 class="video-placeholder"
-                role="img"
                 aria-labelledby="v-nav-label"
                 aria-describedby="v-nav-desc"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path
-                    d="M8 5v14l11-7L8 5zm1.5 2.4L15 12l-5.5 4.6V7.4zM4 7h2v10H4V7zm14 0h2v10h-2V7z"
-                  />
-                </svg>
-              </div>
-              <div class="video-card__corpo">
-                <h3 id="v-nav-label">Vídeo: navegação no site</h3>
-                <p id="v-nav-desc">
-                  <strong>Roteiro (simulado):</strong> demonstração das seções
-                  Programação, Participante e Certificados; destaque para link
-                  "pular para o conteúdo" e botões de acessibilidade.
-                </p>
+                <video controls>
+                  <!-- Formatos modernos e eficientes (navegadores novos) -->
+                  <source src="assets/libras3.webm" type="video/webm" />
+
+                  <!-- Formato compatível com a maioria (navegadores antigos/Safari) -->
+                  <source src="assets/libras3.mp4" type="video/mp4" />
+
+                  <!-- Texto para navegadores que não suportam a tag vídeo -->
+                  Seu navegador não suporta este formato de vídeo.
+                  <a href="assets/libras3.mp4">Baixe o vídeo</a>.
+                </video>
               </div>
             </article>
           </div>
